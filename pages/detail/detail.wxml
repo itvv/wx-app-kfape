@@ -1,23 +1,8 @@
-<!--/*
- * 
- * WordPres版微信小程序
- * author: jianbo
- * organization: 守望轩  www.watch-life.net
- * github:    https://github.com/iamxjb/winxin-app-watch-life.net
- * 技术支持微信号：iamxjb
- * 开源协议：MIT
- *Copyright (c) 2017 https://www.watch-life.net All rights reserved.
- * 
- */-->
-
 <import src="../../wxParse/wxParse.wxml" />
 <import src="../../templates/copyright.wxml" />
 <import src="../../templates/loading.wxml" />
 <import src="../../templates/modal-view/modal-view.wxml" />
 <import src="../../templates/login-popup.wxml" />
-
-
-
 <view class="container">
     <view class="container">
         <view class="content-article-detail" style="display:{{display}}">
@@ -66,7 +51,15 @@
                 </block>
             </view>
         </view>
-
+   <!--分享图标-->
+        <view class='share'>
+              <view>
+                  <image src="../../images/sharee.png" class="img-menu"></image>
+              </view>
+              <text>分享</text>
+              <button class="share-button" open-type="share">
+              </button>
+        </view>
         <view class="likePost" style="display:{{displayLike}}">
             <view class="relatedTitle">
                 点 赞
@@ -163,9 +156,7 @@
         <view class="ditail-copyright" style="display:{{display}}">
             <template is="tempCopyright" />
         </view>
-
         <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
-       
        <!--评论区-->
         <view style="display:{{enableComment?'block':'none'}}">
             <view class="menuBackground" catchtap="hiddenMenubox" style="display:{{menuBackgroup ? 'block' : 'none'}}"></view>
@@ -185,12 +176,11 @@
                                 <view class="iconList">
                                     <view class="iconLine">
                                         <view style="width:20%; position: relative; float:left; text-align:center">
-
                                             <view>
                                                 <image src="../../images/forwarding.png" class="img-menu"></image>
                                             </view>
                                             <view>
-                                                <text>转发</text>
+                                                <text>分享</text>
                                             </view>
                                             <button class="share-button share-button touch-active" open-type="share">
                                             </button>
@@ -211,7 +201,6 @@
                                                 <text>阅读原文</text>
                                             </view>
                                         </view>
-
                                         <view style="width:20%; float:left; text-align:center">
                                             <view>
                                                 <image src="../../images/{{likeImag}}" catchtap="clickLike" id="likebottom" class="img-menu"></image>
@@ -219,15 +208,15 @@
                                             <view>
                                                 <text>点赞</text>
                                             </view>
+
                                         </view>
                                         <view style="width:20%; float:left; ">
-                                            <view>
-                                                <image src="../../images/appreciation.png" catchtap="praise" class="img-menu"></image>
-                                            </view>
-                                            <view>
-                                                <text>赞赏</text>
-                                            </view>
-
+                                          <view bindtap="{{keepBindtap}}" class="barBox ">
+                  <image class="ijiBottomBarIco img-menu" src="../../images/{{keepLogsImg}}.png"></image>
+                  <view>
+                    <text>收藏</text>
+                  </view>
+            </view>
                                         </view>
                                     </view>
                                 </view>

@@ -34,6 +34,8 @@ Page({
         commentsList: [],
         ChildrenCommentsList: [],
         commentCount: '',
+        keepLogsImg: "collection",
+        keepBindtap: "keep",  
         detailDate: '',
         commentValue: '',
         wxParseData: {},
@@ -96,6 +98,35 @@ Page({
             likeList: likes
         });
     },
+  keep: function () {
+    var t = wx.getStorageSync("keepLogs") || [], e = this.data.postID;
+    t.length > 0 && (t = t.filter(function (t) {
+      return t[0] !== e;
+    })), t.length > 999 && t.pop(), t.unshift([e, this.data.detail.title.rendered, this.data.detail.post_thumbnail_image]),
+      wx.setStorageSync("keepLogs", t), this.setData({
+        keepLogsImg: "collection-on",
+        keepBindtap: "cancelKeep"
+      }), wx.showToast({
+        title: "收藏成功",
+        icon: "success",
+        mask: !1,
+        duration: 1e3
+      });
+  },
+  cancelKeep: function () {
+    var t = wx.getStorageSync("keepLogs") || [], e = this.data.postID;
+    t.length > 0 && (t = t.filter(function (t) {
+      return t[0] !== e;
+    })), wx.setStorageSync("keepLogs", t), this.setData({
+      keepLogsImg: "collection",
+      keepBindtap: "keep"
+    }), wx.showToast({
+      title: "已取消收藏",
+      icon: "success",
+      mask: !1,
+      duration: 1e3
+    });
+  },
     onReachBottom: function () { 
         var self = this;
         if (!self.data.isLastPage) {            
@@ -126,10 +157,10 @@ Page({
             imageUrl: this.data.detail.post_thumbnail_image,
             success: function (res) {
                 // 转发成功
-                console.log(res);
+               // console.log(res);
             },
             fail: function (res) {
-                console.log(res);
+               // console.log(res);
                 // 转发失败
             }
         }
@@ -347,7 +378,7 @@ Page({
                 if (logs.length > 19) {
                     logs.pop();//去除最后一个
                 }
-                logs.unshift([id, response.data.title.rendered]);
+              logs.unshift([id, response.data.title.rendered, response.data.content_first_image]);
                 wx.setStorageSync('readLogs', logs);
                 //end 
 

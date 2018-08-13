@@ -1,55 +1,58 @@
-<!--
-/*
- * 
- * WordPres版微信小程序
- * author: jianbo
- * organization: 守望轩  www.watch-life.net
- * github:    https://github.com/iamxjb/winxin-app-watch-life.net
- * 技术支持微信号：iamxjb
- * 开源协议：MIT
- * Copyright (c) 2017 https://www.watch-life.net All rights reserved.
- *
- */-->
-<import src="../../templates/common-list.wxml" />
-<import src="../../templates/copyright.wxml" />
-<import src="../../templates/login-popup.wxml" />
-
-<view class="readlog-container">  
-  <view class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-
-  <view class="top-bar">
-    <block wx:for="{{topBarItems}}" wx:key="id">
-      <view class="top-bar-item {{item.selected ? 'top-bar-item-Selected': '' }}"  catchtap="onTapTag" id="{{item.id}}">{{item.name}}</view>
-    </block>
-  </view>
-  <view class="container">
-    <view class="showerror" style="display:{{showerror}}">
-      <image src="../../images/cry80.png" style="height:100rpx;width:100rpx"></image>
-      <view class="errortext">
-        暂时无法访问网络
-        <!--
-        <view class="">
-          <button class="more-button" bindtap="reload" size="mini" bindtap="reload">重新加载</button>
-        </view> -->
-      </view>
+<import src="../../templates/copyright.wxml"></import>
+<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" style="background-color: transparent!important;">
+<view class="list-header">
+    <view bindtap="settingStatuClickEvent" class="userinfo">
+        <image backgroundSize="cover" class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </view>
- <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
-       
-    <view class="log-list">
-      <block wx:key="id" wx:for="{{readLogs}}">
-        <view class="log-items" index="{{index}}" id="{{item[0]}}" data-itemtype="{{item[2]}}" catchtap="redictDetail">
-          <text class="log-text">{{index + 1}}. {{item[1]}}</text>
+</view>
+</button>
+<view class="container ijiContainer">
+    <view class="ijiFollowers">
+        <view bindtap="ijiKeep" class="ijiFollowersList {{ijiKeep?'Hover':'unHover'}}">
+            <view>
+                <text class="ijiFollowersNum">{{keepLogs.length}}</text>
+            </view>
+            <view>
+                <text class="ijiFollowersText">收藏</text>
+            </view>
         </view>
-      </block>
-      <view class="log-items" style="display:{{shownodata}}">
-        <text class="log-text">没有相关文章</text>
-      </view>
+        <view bindtap="ijiRead" class="ijiFollowersList {{ijiRead?'Hover':'unHover'}}">
+            <view>
+                <text class="ijiFollowersNum">{{readLogs.length}}</text>
+            </view>
+            <view>
+                <text class="ijiFollowersText">历史</text>
+            </view>
+        </view>
     </view>
-    <view class="copyright" style="display:{{floatDisplay}}">
-      <template is="tempCopyright" />
+    <view style="display:{{ijiRead?'block':'none'}};">
+        <view class="log-list ijiLogList" wx:if="{{readLogs.length>0}}">
+            <view catchtap="redictDetail" class="log-items ijilogItems" id="{{item.id}}" index="{{index}}" style="background-image: url('{{item[2]}}');" wx:for="{{readLogs}}" wx:key="id">
+                <text class="ijiLogTittle">{{item[1]}}</text>
+            </view>
+        </view>
+        <view class="noLog" wx:else>
+            <text class="log-text">您还未浏览任何文章。</text>
+        </view>
     </view>
-  </view>
+    <view style="display:{{ijiKeep?'block':'none'}};">
+        <view class="ijiHasCommentLogList" wx:if="{{keepLogs.length>0}}">
+            <view class="ijiCommentLogList">
+                <view catchtap="redictDetail" class="ijiCommentLogItems" id="{{item[0]}}" index="{{index}}" wx:for="{{keepLogs}}" wx:key="id">
+                    <view class="ijiLogThumb" style="background-image: url('{{item[2]}}');"></view>
+                    <text class="log-text">{{item[1]}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="noLog" wx:else>
+            <text class="log-text">您还未收藏过任何文章。</text>
+        </view>
+    </view>
+</view>
+<view class="ijiBackgroundBlur">
+    <view class="ijiBackgroundBlurBg" style="background-image: url('{{userInfo.avatarUrl}}');"></view>
+</view>
+<view class="copyright" style="display:{{floatDisplay}}">
+    <template is="tempCopyright" data></template>
 </view>

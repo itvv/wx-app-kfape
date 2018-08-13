@@ -1,17 +1,3 @@
-/**
- * html2Json 改造来自: https://github.com/Jxck/html2json
- * 
- * 
- * author: Di (微信小程序开发工程师)
- * organization: WeAppDev(微信小程序开发论坛)(http://weappdev.com)
- *               垂直微信小程序开发交流社区
- * 
- * github地址: https://github.com/icindy/wxParse
- * 
- * for: 微信小程序富文本解析
- * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
- */
-
 var __placeImgeUrlHttps = "https";
 var __emojisReg = '';
 var __emojisBaseSrc = '';
@@ -52,7 +38,6 @@ function removeDOCTYPE(html) {
         .replace(/<.*!doctype.*\>\n/, '')
         .replace(/<.*!DOCTYPE.*\>\n/, '');
 }
-
 function trimHtml(html) {
   return html
         .replace(/\n+/g, '')
@@ -60,8 +45,6 @@ function trimHtml(html) {
         .replace(/\/\*.*?\*\//ig, '')
         .replace(/[ ]+</ig, '<')
 }
-
-
 function html2json(html, bindName) {
     //处理字符串
     html = removeDOCTYPE(html);
@@ -84,7 +67,6 @@ function html2json(html, bindName) {
                 node: 'element',
                 tag: tag,
             };
-
             if (bufArray.length === 0) {
                 node.index = index.toString()
                 index += 1
@@ -95,7 +77,6 @@ function html2json(html, bindName) {
                 }
                 node.index = parent.index + '.' + parent.nodes.length
             }
-
             if (block[tag]) {
                 node.tagType = "block";
             } else if (inline[tag]) {

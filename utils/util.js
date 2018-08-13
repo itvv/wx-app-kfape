@@ -1,24 +1,10 @@
-/*
- * 
- * WordPres版微信小程序
- * author: jianbo
- * organization: 守望轩  www.watch-life.net
- * github:    https://github.com/iamxjb/winxin-app-watch-life.net
- * 技术支持微信号：iamxjb
- * 开源协议：MIT
- * Copyright (c) 2017 https://www.watch-life.net All rights reserved.
- */
-
 function formatTime(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1
   var day = date.getDate()
-
   var hour = date.getHours()
   var minute = date.getMinutes()
   var second = date.getSeconds()
-
-
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
@@ -140,6 +126,8 @@ function cutstr(str, len,flag) {
     var str=s.replace(/<\/?.+?>/g,"");    
     str = str.replace(/[\r\n]/g, ""); //去掉回车换行    
     return str.replace(/ /g,"");
+    str = str.replace('&hellip', '');//去掉生成海报多余的&字符
+    str = str.replace('&8211', '');//去掉生成海报多余的&字符
   }
 
   function formatDateTime(s)
@@ -148,7 +136,6 @@ function cutstr(str, len,flag) {
     return s.replace("T", " ");
 
   }
-
   var compare = function (prop) {
     return function (obj1, obj2) {
       var val1 = obj1[prop];
@@ -161,7 +148,6 @@ function cutstr(str, len,flag) {
       }
     }
   }
-
   /* 
  * 判断图片类型 
  */  

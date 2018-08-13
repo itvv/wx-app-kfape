@@ -1,69 +1,4 @@
-/*
- * 
- * WordPres版微信小程序
- * author: jianbo
- * organization: 守望轩  www.watch-life.net
- * github:    https://github.com/iamxjb/winxin-app-watch-life.net
- * 技术支持微信号：iamxjb
- * 开源协议：MIT
- * Copyright (c) 2017 https://www.watch-life.net All rights reserved.
- */
 
-.index-container {
-  /* padding: 0 24rpx; */
-  background-color: #fff;
-}
-
-.index-header {
-  text-align: center;
-  font-weight: normal;
-  font-size: 30rpx;
-  line-height: 40rpx;
-  color: #757575;
-  /* margin-top: 5rpx; */
-}
-
-/*   index   swiper  */
-
-swiper.index-swiper {
-  position: relative;
-  height: 420rpx;
-}
-
-swiper .swiper-mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
-
-swiper image {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-swiper .swiper-desc {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(63, 76, 88, 0.3)100%);
-  color: #fff;
-  line-height: 150rpx;
-  margin: 0 auto;
-  font-weight: 700;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  font-size: 30rpx;
- /* height: 120rpx; */
-  text-shadow: 0px 0px 16px #646d75;
-}
-
-/*   index   swiper  end  */
 
 .search-button {
   border-left: 0 !important;
@@ -73,8 +8,8 @@ swiper .swiper-desc {
   background-color: #fff !important;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-right-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
   color: #296fd0 !important;
   width: 20%;
   margin: 0 !important;
@@ -83,17 +18,34 @@ swiper .swiper-desc {
 
 .search-button icon {
   position: absolute;
-  margin: 28rpx 16rpx;
+  margin-top:20rpx;
+  margin-left: -10rpx; 
 }
-
+.share-eats {
+   margin-top: -36px;
+  text-decoration:none;
+  user-select:none;
+  display: block;
+  width:120px;
+  height:50px;
+  line-height:50px;
+  text-align:center;
+  border-radius:250px;
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+  background-color: #ff8300;
+  box-shadow: 0 3px 9px 0 rgba(255, 131, 0, 0.35);
+  overflow: hidden;
+}
 .search-input {
   background-color: #fff;
   padding: 16rpx 0 16rpx 32rpx;
   min-height: 1rem;
   font-size: 30rpx;
   /*  position: absolute;*/
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
+  border-bottom-left-radius: 20rpx;
+  border-top-left-radius: 20rpx;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   /* border: 1px solid #ededed;  */
@@ -113,10 +65,15 @@ swiper .swiper-desc {
 }
 
 .search-pancel {
-  display: flex;
-  flex-direction: row;
-  background-color: #f5f7f7;
-  padding: 24rpx 24rpx;
+  border-radius: 20rpx;
+  margin-left: 1.8%;
+  border: 1px solid #e0e0e0;
+  display:flex;
+  flex-direction:row;
+  padding-left:12px;
+  margin-top:20px;
+  width:93%;
+  box-shadow:rgba(0,0,0,0.1) 0 4rpx 6rpx;
 }
 
 .search-pancel image {
@@ -126,36 +83,212 @@ swiper .swiper-desc {
   vertical-align: middle;
 }
 
-
-.top-Nav{
-display: flex;
-padding: 25rpx 0;
-background: #fff;
-justify-content:space-around;
-border-bottom: 1px solid #eee;
-
+/**/
+.fz48 {
+  font-size: 20px;
 }
-.top-item{
-text-align: center;
-}
-.top-item image{
-width: 88rpx;
-height: 88rpx;
-}
-.top-item text{
-line-height: 20rpx;
-font-size: 14px;
+.container {
+  padding-top: 30px;
 }
 
 
-.share-button{
-  opacity: 0; 
-  position:absolute;
+.containers {
+  background: #ffad67;
+  height: 800rpx;
+}
+
+.index-title {
+  padding: 60rpx 0 0 40rpx;
+  font-weight: 800;
+  color: #fff;
+  
+}
+
+.title-style {
+  font-size: 26px;
+  letter-spacing: 2rpx;
+  text-shadow: 0 10rpx 20rpx rgba(0, 0, 0, 0.5);
+  
+}
+
+.banner-list {
+  margin:14rpx 8rpx 15rpx 8rpx;
+   background-image: linear-gradient(25deg, #f76a50, #d99f7a, #a7c9a7,0.25)
+}
+
+.banner-box {
+  text-align: center;
+
+}
+
+.banner-image {
+  position: relative;
+  width: 100%;
+  height: 420rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 10rpx 20rpx rgba(0, 0, 0, 0.3);
+  color: white;
+  overflow: hidden;
+  transform: scale(0.9);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.banner-image-content {
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
-  top:0;
-  left: 0;
+  border-radius: 20rpx;
+}
 
+.banner-title {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  font-weight: bold;
+}
+
+.banner-active {
+  transform: scale(1);
+  
+}
+
+/*顶部轮播图样式*/
+swiper {
+  height: 480rpx;
+}
+
+/*中部功能导航栏*/
+.top-Nav{
+  margin-top: 15px;
+  display: flex;
+  padding: 22rpx 0 30rpx 0;
+  justify-content:space-around;
+  /*border-bottom: 1px solid #eee;*/
+  display:-webkit-box;
+}
+.top-item{
+  text-align: center;
+  line-height:34rpx;
+  width:152rpx;
+  margin-left: 13px;
+}
+.top-item image{
+  width: 60rpx;
+  height: 60rpx;
+  /*opacity:.8;*/
+}
+.top-item text{
+  line-height: 20rpx;
+  font-size: 14px;
+  padding-top: -30px;
+  color: #384756;
+}
+
+
+/*菜谱列表*/
+.recommend-title {
+  margin: 75rpx 0 30rpx 48rpx;
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #353742;
+  line-height: 1;
+}
+
+.food-list-wrap {
+  padding: 40rpx 15rpx 40rpx 15rpx;
+}
+
+.food-recommend .food-list-wrap .food-list .food-item {
+    flex-shrink: 0;
+    padding-bottom:40rpx;
+}
+
+.food-recommend .food-list-wrap .food-list .food-item .food-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16rpx;
+  z-index: 1;
+}
+.food-recommend .food-list-wrap .food-list .food-item .food-detail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 400rpx;
+  line-height: 1.5;
+  color: white;
+  padding:40rpx 0rpx;
+  box-shadow: 0 20rpx 40rpx rgba(0, 0, 0, 0.2);
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+.food-recommend .food-list-wrap .food-list .food-item .food-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 16rpx;
+    background: linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(0,0,0,0) 60%,rgba(0,0,0,0.5));
+    z-index: 2;
+}
+
+.food-recommend .food-list-wrap .food-list .food-item .food-title {
+    position: relative;
+    font-size:40rpx;
+    line-height: 1.5;
+    z-index: 3;
+    overflow: hidden;
+    padding:25rpx;
+}
+
+.food-recommend .food-list-wrap .food-list .food-item .food-desc {
+    position: relative;
+    flex-shrink: 0;
+    z-index: 3;
+    padding-left: 20rpx;
+    text-shadow: 0 10rpx 20rpx rgba(0, 0, 0, 0.5);
+}
+
+.food-recommend .food-list-wrap .food-list .food-item .food-desc .item-text {
+    font-size: 24rpx;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+.entry-date {
+  font-size: 24rpx;
+  line-height: 1.6;
+  font-weight: normal;
+  outline: none;
+  margin-bottom: 30rpx;
+  background-color: fff;
+}
+.entry-date img{
+  background: fff;
+}
+.entry-date-text {
+  margin-left: 10rpx;
+}
+
+.entry-icon-text {
+  margin-left: 10rpx;
+}
+.loading-tip{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 9999;
+  width: 300rpx;
+  height: 300rpx;
+}
+.loading-tip image{
+  width: 100%;
+  height: 100%;
 }

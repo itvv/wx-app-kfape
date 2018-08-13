@@ -8,9 +8,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
+	"libVersion": "1.9.1",
 	"appid": "wx20a8ed1c193d452f",
-	"projectname": "开发猿",
+	"projectname": "CXCAT",
 	"miniprogramRoot": "./",
 	"condition": {
 		"search": {
@@ -35,16 +35,21 @@
 				}
 			]
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
 		"miniprogram": {
 			"current": -1,
 			"list": [
 				{
-					"name": "test",
-					"pathName": "COMPONENT/music",
-					"query": "a=哈哈",
-					"scene": 1044,
-					"shareInfo": {},
-					"referrerInfo": {}
+					"id": -1,
+					"name": "sdf",
+					"pathName": "pages/readlog/readlog",
+					"query": ""
 				}
 			]
 		}

@@ -4,27 +4,25 @@
         "pages/detail/detail",
         "pages/logs/logs",
         "pages/page/page",
-        "pages/about/about",
         "pages/list/list",
         "pages/topic/topic",
         "pages/readlog/readlog",
         "pages/hot/hot",
-        "pages/pay/pay",
         "pages/webpage/webpage",
         "pages/comments/comments",
         "pages/poster/poster"
     ],
     "window": {
-        "backgroundTextStyle": "dark",
-        "navigationBarBackgroundColor": "#118fff",
-        "navigationBarTitleText": "开发猿",
-        "navigationBarTextStyle": "white"
+      "backgroundTextStyle": "dark",
+      "navigationBarBackgroundColor": "#ffd334",
+      "navigationBarTitleText": "猫小镇 - 在路上",
+      "navigationBarTextStyle": "black"
     },
     "tabBar": {
         "color": "#9BABBA",
         "selectedColor": "#495056",
         "borderStyle": "white",
-        "backgroundColor": "#ffffff",
+        "backgroundColor": "#ffd334",
         "list": [
             {
                 "pagePath": "pages/index/index",
@@ -33,22 +31,22 @@
                 "text": "首页"
             },
             {
-                "pagePath": "pages/topic/topic",
-                "iconPath": "images/tar-topic.png",
+                "pagePath": "pages/hot/hot",
+                "iconPath": "images/ranking.png",
                 "selectedIconPath": "images/tar-topic-on.png",
-                "text": "专题"
+                "text": "栏目"
+            },
+            {
+              "pagePath": "pages/topic/topic",
+              "iconPath": "images/zt.png",
+              "selectedIconPath": "images/zt-on.png",
+              "text": "专题"
             },
             {
                 "pagePath": "pages/readlog/readlog",
                 "iconPath": "images/tar-person.png",
                 "selectedIconPath": "images/tar-person-on.png",
                 "text": "我的"
-            },
-            {
-                "pagePath": "pages/about/about",
-                "iconPath": "images/tar-about.png",
-                "selectedIconPath": "images/tar-about-on.png",
-                "text": "关于"
             }
         ]
     },
