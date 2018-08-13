@@ -32,7 +32,6 @@
     <image src="../../images/cry80.png" style="height:100rpx;width:100rpx"></image>
     <view class="errortext">
         暂时无法访问网络,下拉重试...
-
     </view>
 </view>
 
@@ -47,37 +46,6 @@
                 </button>
             </view>
         </form>
-        <!-- 图标导航 -->
-        <view class="top-Nav">
-            <block wx:for="{{topNav}}" wx:key="id">
-                <view class="top-item" 
-                catchtap="onNavRedirect" 
-                id="{{item.id}}" 
-                data-redicttype="{{item.redirecttype}}" 
-                data-url="{{item.url}}" 
-                data-appid="{{item.appid}}" 
-                data-extraData="{{item.extraData}}">
-                    <view>
-                        <image src="{{item.image}}"></image>
-                    </view>
-                    <view>
-                        <text>{{item.name}}</text>
-                    </view>
-                </view>
-            </block>
-            <view class="top-item" style='width:10%; position: relative; float:left; text-align:center'>
-                    <view>
-                        <image src="../../images/kefu.png"></image>
-                    </view>
-                    <view>
-                        <text>客服</text>
-                    </view>
-                    <button class="share-button" open-type="contact">
-                    </button>
-                </view>
-        </view>
-        <!-- 图标导航 -->
-
     </view>
     <view class="container">
      <!-- 加载图文列表 -->
@@ -85,8 +53,7 @@
             <template is="tempCommonList" data="{{postsList}}" />
 
             <view class="loadingmore" style="display:{{floatDisplay}}">
-            <!-- 
-                <view hidden="{{isLastPage}}">
+            <!--<view hidden="{{isLastPage}}">
                     <button class="more-button" formType="submit" size="mini" bindtap="loadMore">加载更多...</button>
                 </view>-->
                 <view class="no-more" hidden="{{!isLastPage}}">---无更多文章---</view>

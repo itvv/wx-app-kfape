@@ -25,7 +25,7 @@ Page({
     },
     onLoad: function (options) {
         wx.setNavigationBarTitle({
-            title: config.getWebsiteName+'-专题',
+            title: '专题',
             success: function (res) {
                 // success
             }
