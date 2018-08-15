@@ -15,12 +15,12 @@ Page({
     },
     onLoad: function (options) {
         wx.setNavigationBarTitle({
-            title: config.getWebsiteName+'-专题',
+            title: config.getWebsiteName,
             success: function (res) {
                 // success
             }
         });
-        
+      
         this.fetchCategoriesData();
     },
     onShow:function(){            

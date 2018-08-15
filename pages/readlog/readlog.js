@@ -16,7 +16,7 @@ Page({
   data: {
     userInfo: {
       nickName: "点击授权登录",
-      avatarUrl: "https://cxcat.com/wp-content/uploads/2018/04/%E5%B0%81%E9%9D%A2.jpg"
+      avatarUrl: "https://blog.kfape.cn/wp-content/themes/MyDream/img/gravatar.png"
     },
     readLogs: [],
     commentLogs: [],

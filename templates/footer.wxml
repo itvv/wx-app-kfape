@@ -12,7 +12,7 @@
 <template name="tempFooter"> 
   <view class="header">    
     <view>
-      © 2015-2018 猫小镇Live  by WordPress
+      Copyright © 2018 开发猿 All rights reserved.
     </view>
   </view>
 </template>

@@ -14,15 +14,15 @@
     ],
     "window": {
       "backgroundTextStyle": "dark",
-      "navigationBarBackgroundColor": "#ffd334",
-      "navigationBarTitleText": "猫小镇 - 在路上",
-      "navigationBarTextStyle": "black"
+      "navigationBarBackgroundColor": "#1058A0",
+      "navigationBarTitleText": "开发猿",
+      "navigationBarTextStyle": "white"
     },
     "tabBar": {
-        "color": "#9BABBA",
-        "selectedColor": "#495056",
+        "color": "white",
+        "selectedColor": "#ffac38",
         "borderStyle": "white",
-        "backgroundColor": "#ffd334",
+        "backgroundColor": "#1058A0",
         "list": [
             {
                 "pagePath": "pages/index/index",
@@ -32,20 +32,20 @@
             },
             {
                 "pagePath": "pages/hot/hot",
-                "iconPath": "images/ranking.png",
-                "selectedIconPath": "images/tar-topic-on.png",
-                "text": "栏目"
+                "iconPath": "images/tar-hot.png",
+                "selectedIconPath": "images/tar-hot-on.png",
+                "text": "热门"
             },
             {
               "pagePath": "pages/topic/topic",
-              "iconPath": "images/zt.png",
-              "selectedIconPath": "images/zt-on.png",
+              "iconPath": "images/tar-topic.png",
+              "selectedIconPath": "images/tar-topic-on.png",
               "text": "专题"
             },
             {
                 "pagePath": "pages/readlog/readlog",
-                "iconPath": "images/tar-person.png",
-                "selectedIconPath": "images/tar-person-on.png",
+                "iconPath": "images/tar-readlog.png",
+                "selectedIconPath": "images/tar-readlog-on.png",
                 "text": "我的"
             }
         ]

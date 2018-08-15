@@ -26,8 +26,6 @@ Page({
     floatDisplay: "none",
     displayfirstSwiper:"none",
     topNav: []
-    
-
   },
   formSubmit: function (e) {
     var url = '../list/list'
@@ -60,7 +58,7 @@ Page({
   },
   onShareAppMessage: function () {
     return {
-      title: '“' + config.getWebsiteName+'”猫小镇-带你看到更大的世界',
+      title: '“' + config.getWebsiteName+'”开发猿-一个前端人员的成长！',
       path: 'pages/index/index',
       success: function (res) {
         // 转发成功
