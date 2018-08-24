@@ -42,12 +42,6 @@
 
     <view style="display:{{showallDisplay}}">
       <template is="tempCommonList" data="{{postsList}}" />
-
-      <view class="loadingmore" style="display:{{floatDisplay}}">
-        <view class="no-more" hidden="{{!isLastPage}}">----------cxcat.com---------</view>
-
-      </view>
-
     </view>
 
     <view class="copyright" style="display:{{floatDisplay}}">

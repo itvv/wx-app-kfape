@@ -13,9 +13,9 @@
         <image src="../../images/cry80.png" style="height:100rpx;width:100rpx"></image>
 
         <view class="errortext">
-            小喵不在家🐱
+            加载失败
             <view class="">
-                <button class="more-button" bindtap="reload" size="mini" bindtap="reload">下拉找Ta回家</button>
+                <button class="more-button" bindtap="reload" size="mini" bindtap="reload">下拉重新加载</button>
             </view>
         </view>
     </view>
